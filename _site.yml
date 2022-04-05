@@ -1,4 +1,5 @@
 name: "Joey's Website (very cool)"
+output_dir: "docs"
 navbar:
   title: "Joey's Website (very cool)"
   left:
