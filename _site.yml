@@ -1,6 +1,6 @@
 name: "Joey's Website (very cool)"
 navbar:
-  title: "The Website"
+  title: "Joey's Website (very cool)"
   left:
     - text: "Home Page"
       href: index.html
@@ -8,7 +8,7 @@ navbar:
       href: untitled_unmastered.html
   right:
     - icon: fa-github fa-lg
-      href: https://github.com/JSC370/jsc370-2022/
+      href: https://github.com/hotz1
     - text: "JSC370 Home"
       href: https://jsc370.github.io/jsc370-2022/
 output:
