@@ -1,0 +1,72 @@
+---
+title: "Page 3: The coolest page"
+subtitle: "This page contains interactive plots and visualizations."
+author: "Joey Hotz"
+date: "05/04/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(plotly)
+```
+
+# Interactive Visualizations
+
+```{r, echo = FALSE}
+fn <- "https://raw.githubusercontent.com/JSC370/jsc370-2022/main/labs/lab12/process_COVID_data.R"
+if (!file.exists("process_COVID_data.R"))
+  download.file(fn, destfile = "process_COVID_data.R")
+source("process_COVID_data.R")
+```
+
+First, we will give a glimpse of the data which we are examining. These are the first few states (in alphabetical order) in the daily COVID data for each of the states in the USA.
+
+```{r, echo = FALSE}
+knitr::kable(head(cv_states_today, n = 7)) %>%
+  kableExtra::scroll_box(width = 'fullwidth')
+```
+
+# Interactive COVID Plots by State: {.tabset}
+
+The following two plots show the number of COVID cases and deaths per 100,000 residents of each state in the United States (excluding the District of Columbia). The sizes for each states' respective circle is proportional to the population of the state.
+
+## Total Cases per 100k Residents 
+
+```{r, echo = FALSE, warning = FALSE}
+cv_states_today %>% 
+  filter(state != "District of Columbia") %>%
+  plot_ly(x = ~pop_density, y = ~per100k, type = 'scatter', mode = 'markers',
+          color = ~state, size = ~population, sizes = c(5, 70), 
+          marker = list(sizemode = 'diameter', opacity = 0.5),
+          hover_info = "text", 
+          text = ~paste0("State: ", state,
+                         "<br>Cases per 100k: ", per100k,
+                         "<br>Deaths per 100k: ", deathsper100k)) %>%
+  layout(title = "Population-normalized cases per 100k",
+         yaxis = list(title = "Cases per 100k"),
+         xaxis = list(title = "Population Density"),
+         hovermode = "compare")
+```
+
+## Total Deaths per 100k Residents
+
+```{r, echo = FALSE, warning = FALSE}
+cv_states_today %>% 
+  filter(state != "District of Columbia") %>%
+  plot_ly(x = ~pop_density, y = ~deathsper100k, type = 'scatter', mode = 'markers',
+          color = ~state, size = ~population, sizes = c(5, 70), 
+          marker = list(sizemode = 'diameter', opacity = 0.5),
+          hover_info = "text", 
+          text = ~paste0("State: ", state,
+                         "<br>Cases per 100k: ", per100k,
+                         "<br>Deaths per 100k: ", deathsper100k)) %>%
+  layout(title = "Population-normalized deaths per 100k",
+         yaxis = list(title = "Deaths per 100k"),
+         xaxis = list(title = "Population Density"),
+         hovermode = "compare")
+```

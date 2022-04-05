@@ -7,6 +7,8 @@ navbar:
       href: index.html
     - text: "The Second Page"
       href: untitled_unmastered.html
+    - text: "Page III"
+      href: page3.html
   right:
     - icon: fa-github fa-lg
       href: https://github.com/hotz1

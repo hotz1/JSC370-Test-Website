@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Joey Hotz" />
+
+<meta name="date" content="2022-05-04" />
+
+<title>Page 3: The coolest page</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Joey's Website (very cool)</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home Page</a>
+</li>
+<li>
+  <a href="untitled_unmastered.html">The Second Page</a>
+</li>
+<li>
+  <a href="page3.html">Page III</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/hotz1">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://jsc370.github.io/jsc370-2022/">JSC370 Home</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Page 3: The coolest page</h1>
+<h3 class="subtitle">This page contains interactive plots and visualizations.</h3>
+<h4 class="author">Joey Hotz</h4>
+<h4 class="date">05/04/2022</h4>
+
+</div>
+
+
+<div id="interactive-visualizations" class="section level1">
+<h1>Interactive Visualizations</h1>
+<p>First, we will give a glimpse of the data which we are examining. These are the first few states (in alphabetical order) in the daily COVID data for each of the states in the USA.</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:fullwidth; ">
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+state
+</th>
+<th style="text-align:left;">
+date
+</th>
+<th style="text-align:right;">
+fips
+</th>
+<th style="text-align:right;">
+cases
+</th>
+<th style="text-align:right;">
+deaths
+</th>
+<th style="text-align:right;">
+geo_id
+</th>
+<th style="text-align:right;">
+population
+</th>
+<th style="text-align:right;">
+pop_density
+</th>
+<th style="text-align:left;">
+abb
+</th>
+<th style="text-align:right;">
+new_cases
+</th>
+<th style="text-align:right;">
+new_deaths
+</th>
+<th style="text-align:right;">
+per100k
+</th>
+<th style="text-align:right;">
+newper100k
+</th>
+<th style="text-align:right;">
+deathsper100k
+</th>
+<th style="text-align:right;">
+newdeathsper100k
+</th>
+<th style="text-align:right;">
+naive_CFR
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Alabama
+</td>
+<td style="text-align:left;">
+2022-04-04
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1295901
+</td>
+<td style="text-align:right;">
+19364
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4887871
+</td>
+<td style="text-align:right;">
+96.509389
+</td>
+<td style="text-align:left;">
+AL
+</td>
+<td style="text-align:right;">
+433
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+26512.6
+</td>
+<td style="text-align:right;">
+8.9
+</td>
+<td style="text-align:right;">
+396.2
+</td>
+<td style="text-align:right;">
+0.5
+</td>
+<td style="text-align:right;">
+1.49
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Alaska
+</td>
+<td style="text-align:left;">
+2022-04-04
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+246149
+</td>
+<td style="text-align:right;">
+1195
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+737438
+</td>
+<td style="text-align:right;">
+1.291523
+</td>
+<td style="text-align:left;">
+AK
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+33378.9
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+162.0
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.49
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Arizona
+</td>
+<td style="text-align:left;">
+2022-04-04
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2007292
+</td>
+<td style="text-align:right;">
+29323
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+7171646
+</td>
+<td style="text-align:right;">
+63.135855
+</td>
+<td style="text-align:left;">
+AZ
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+27989.3
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+408.9
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+1.46
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Arkansas
+</td>
+<td style="text-align:left;">
+2022-04-04
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+833563
+</td>
+<td style="text-align:right;">
+11458
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3013825
+</td>
+<td style="text-align:right;">
+57.919685
+</td>
+<td style="text-align:left;">
+AR
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+27658.0
+</td>
+<td style="text-align:right;">
+1.2
+</td>
+<td style="text-align:right;">
+380.2
+</td>
+<td style="text-align:right;">
+0.5
+</td>
+<td style="text-align:right;">
+1.37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+California
+</td>
+<td style="text-align:left;">
+2022-04-04
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+9112151
+</td>
+<td style="text-align:right;">
+90035
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+39557045
+</td>
+<td style="text-align:right;">
+253.906502
+</td>
+<td style="text-align:left;">
+CA
+</td>
+<td style="text-align:right;">
+2342
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+23035.5
+</td>
+<td style="text-align:right;">
+5.9
+</td>
+<td style="text-align:right;">
+227.6
+</td>
+<td style="text-align:right;">
+0.1
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Colorado
+</td>
+<td style="text-align:left;">
+2022-04-04
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+1358573
+</td>
+<td style="text-align:right;">
+12278
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+5695564
+</td>
+<td style="text-align:right;">
+54.955978
+</td>
+<td style="text-align:left;">
+CO
+</td>
+<td style="text-align:right;">
+1197
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+23853.2
+</td>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+215.6
+</td>
+<td style="text-align:right;">
+0.1
+</td>
+<td style="text-align:right;">
+0.90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Connecticut
+</td>
+<td style="text-align:left;">
+2022-04-04
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+738571
+</td>
+<td style="text-align:right;">
+10807
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+3572665
+</td>
+<td style="text-align:right;">
+737.744600
+</td>
+<td style="text-align:left;">
+CT
+</td>
+<td style="text-align:right;">
+1268
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+20672.8
+</td>
+<td style="text-align:right;">
+35.5
+</td>
+<td style="text-align:right;">
+302.5
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+1.46
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="interactive-covid-plots-by-state" class="section level1 tabset">
+<h1 class="tabset">Interactive COVID Plots by State:</h1>
+<p>The following two plots show the number of COVID cases and deaths per 100,000 residents of each state in the United States (excluding the District of Columbia). The sizes for each states’ respective circle is proportional to the population of the state.</p>
+<div id="total-cases-per-100k-residents" class="section level2">
+<h2>Total Cases per 100k Residents</h2>
+<div id="htmlwidget-8e76bc417ab0ab430183" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8e76bc417ab0ab430183">{"x":{"visdat":{"25882da56ede":["function () ","plotlyVisDat"]},"cur_data":"25882da56ede","attrs":{"25882da56ede":{"x":{},"y":{},"mode":"markers","marker":{"sizemode":"diameter","opacity":0.5},"hover_info":"text","text":{},"color":{},"size":{},"alpha_stroke":1,"sizes":[5,70],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Population-normalized cases per 100k","yaxis":{"domain":[0,1],"automargin":true,"title":"Cases per 100k"},"xaxis":{"domain":[0,1],"automargin":true,"title":"Population Density"},"hovermode":"compare","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[96.50938865],"y":[26512.6],"mode":"markers","marker":{"color":"rgba(102,194,165,1)","size":[12.1873700271949],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(102,194,165,1)"}},"hover_info":"text","text":"State: Alabama<br>Cases per 100k: 26512.6<br>Deaths per 100k: 396.2","type":"scatter","name":"Alabama","textfont":{"color":"rgba(102,194,165,1)","size":12.1873700271949},"error_y":{"color":"rgba(102,194,165,1)","width":12.1873700271949},"error_x":{"color":"rgba(102,194,165,1)","width":12.1873700271949},"line":{"color":"rgba(102,194,165,1)","width":12.1873700271949},"xaxis":"x","yaxis":"y","frame":null},{"x":[1.2915230609],"y":[33378.9],"mode":"markers","marker":{"color":"rgba(135,188,156,1)","size":[5.26630962766194],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(135,188,156,1)"}},"hover_info":"text","text":"State: Alaska<br>Cases per 100k: 33378.9<br>Deaths per 100k: 162","type":"scatter","name":"Alaska","textfont":{"color":"rgba(135,188,156,1)","size":5.26630962766194},"error_y":{"color":"rgba(135,188,156,1)","width":5.26630962766194},"error_x":{"color":"rgba(135,188,156,1)","width":5.26630962766194},"line":{"color":"rgba(135,188,156,1)","width":5.26630962766194},"xaxis":"x","yaxis":"y","frame":null},{"x":[63.135855048],"y":[27989.3],"mode":"markers","marker":{"color":"rgba(160,182,146,1)","size":[15.9956822476171],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(160,182,146,1)"}},"hover_info":"text","text":"State: Arizona<br>Cases per 100k: 27989.3<br>Deaths per 100k: 408.9","type":"scatter","name":"Arizona","textfont":{"color":"rgba(160,182,146,1)","size":15.9956822476171},"error_y":{"color":"rgba(160,182,146,1)","width":15.9956822476171},"error_x":{"color":"rgba(160,182,146,1)","width":15.9956822476171},"line":{"color":"rgba(160,182,146,1)","width":15.9956822476171},"xaxis":"x","yaxis":"y","frame":null},{"x":[57.919684465],"y":[27658],"mode":"markers","marker":{"color":"rgba(181,176,137,1)","size":[9.06230197827011],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(181,176,137,1)"}},"hover_info":"text","text":"State: Arkansas<br>Cases per 100k: 27658<br>Deaths per 100k: 380.2","type":"scatter","name":"Arkansas","textfont":{"color":"rgba(181,176,137,1)","size":9.06230197827011},"error_y":{"color":"rgba(181,176,137,1)","width":9.06230197827011},"error_x":{"color":"rgba(181,176,137,1)","width":9.06230197827011},"line":{"color":"rgba(181,176,137,1)","width":9.06230197827011},"xaxis":"x","yaxis":"y","frame":null},{"x":[253.9065023],"y":[23035.5],"mode":"markers","marker":{"color":"rgba(200,169,128,1)","size":[70],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(200,169,128,1)"}},"hover_info":"text","text":"State: California<br>Cases per 100k: 23035.5<br>Deaths per 100k: 227.6","type":"scatter","name":"California","textfont":{"color":"rgba(200,169,128,1)","size":70},"error_y":{"color":"rgba(200,169,128,1)","width":70},"error_x":{"color":"rgba(200,169,128,1)","width":70},"line":{"color":"rgba(200,169,128,1)","width":70},"xaxis":"x","yaxis":"y","frame":null},{"x":[54.955977559],"y":[23853.2],"mode":"markers","marker":{"color":"rgba(217,161,119,1)","size":[13.5342396278559],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(217,161,119,1)"}},"hover_info":"text","text":"State: Colorado<br>Cases per 100k: 23853.2<br>Deaths per 100k: 215.6","type":"scatter","name":"Colorado","textfont":{"color":"rgba(217,161,119,1)","size":13.5342396278559},"error_y":{"color":"rgba(217,161,119,1)","width":13.5342396278559},"error_x":{"color":"rgba(217,161,119,1)","width":13.5342396278559},"line":{"color":"rgba(217,161,119,1)","width":13.5342396278559},"xaxis":"x","yaxis":"y","frame":null},{"x":[737.74459965],"y":[20672.8],"mode":"markers","marker":{"color":"rgba(233,153,110,1)","size":[9.99419640800191],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(233,153,110,1)"}},"hover_info":"text","text":"State: Connecticut<br>Cases per 100k: 20672.8<br>Deaths per 100k: 302.5","type":"scatter","name":"Connecticut","textfont":{"color":"rgba(233,153,110,1)","size":9.99419640800191},"error_y":{"color":"rgba(233,153,110,1)","width":9.99419640800191},"error_x":{"color":"rgba(233,153,110,1)","width":9.99419640800191},"line":{"color":"rgba(233,153,110,1)","width":9.99419640800191},"xaxis":"x","yaxis":"y","frame":null},{"x":[496.4324605],"y":[26884.9],"mode":"markers","marker":{"color":"rgba(248,144,101,1)","size":[5.64940121563985],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(248,144,101,1)"}},"hover_info":"text","text":"State: Delaware<br>Cases per 100k: 26884.9<br>Deaths per 100k: 296.8","type":"scatter","name":"Delaware","textfont":{"color":"rgba(248,144,101,1)","size":5.64940121563985},"error_y":{"color":"rgba(248,144,101,1)","width":5.64940121563985},"error_x":{"color":"rgba(248,144,101,1)","width":5.64940121563985},"line":{"color":"rgba(248,144,101,1)","width":5.64940121563985},"xaxis":"x","yaxis":"y","frame":null},{"x":[397.01575445],"y":[27681],"mode":"markers","marker":{"color":"rgba(232,146,123,1)","size":[39.5543132782142],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(232,146,123,1)"}},"hover_info":"text","text":"State: Florida<br>Cases per 100k: 27681<br>Deaths per 100k: 344.7","type":"scatter","name":"Florida","textfont":{"color":"rgba(232,146,123,1)","size":39.5543132782142},"error_y":{"color":"rgba(232,146,123,1)","width":39.5543132782142},"error_x":{"color":"rgba(232,146,123,1)","width":39.5543132782142},"line":{"color":"rgba(232,146,123,1)","width":39.5543132782142},"xaxis":"x","yaxis":"y","frame":null},{"x":[182.26478911],"y":[23114.1],"mode":"markers","marker":{"color":"rgba(220,149,138,1)","size":[21.5783592156126],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(220,149,138,1)"}},"hover_info":"text","text":"State: Georgia<br>Cases per 100k: 23114.1<br>Deaths per 100k: 339.4","type":"scatter","name":"Georgia","textfont":{"color":"rgba(220,149,138,1)","size":21.5783592156126},"error_y":{"color":"rgba(220,149,138,1)","width":21.5783592156126},"error_x":{"color":"rgba(220,149,138,1)","width":21.5783592156126},"line":{"color":"rgba(220,149,138,1)","width":21.5783592156126},"xaxis":"x","yaxis":"y","frame":null},{"x":[221.17691552],"y":[16519.9],"mode":"markers","marker":{"color":"rgba(206,152,152,1)","size":[6.40533562063236],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(206,152,152,1)"}},"hover_info":"text","text":"State: Hawaii<br>Cases per 100k: 16519.9<br>Deaths per 100k: 97","type":"scatter","name":"Hawaii","textfont":{"color":"rgba(206,152,152,1)","size":6.40533562063236},"error_y":{"color":"rgba(206,152,152,1)","width":6.40533562063236},"error_x":{"color":"rgba(206,152,152,1)","width":6.40533562063236},"line":{"color":"rgba(206,152,152,1)","width":6.40533562063236},"xaxis":"x","yaxis":"y","frame":null},{"x":[21.225798536],"y":[25339.8],"mode":"markers","marker":{"color":"rgba(191,154,166,1)","size":[6.96182587438443],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(191,154,166,1)"}},"hover_info":"text","text":"State: Idaho<br>Cases per 100k: 25339.8<br>Deaths per 100k: 279.3","type":"scatter","name":"Idaho","textfont":{"color":"rgba(191,154,166,1)","size":6.96182587438443},"error_y":{"color":"rgba(191,154,166,1)","width":6.96182587438443},"error_x":{"color":"rgba(191,154,166,1)","width":6.96182587438443},"line":{"color":"rgba(191,154,166,1)","width":6.96182587438443},"xaxis":"x","yaxis":"y","frame":null},{"x":[229.51115613],"y":[24159.9],"mode":"markers","marker":{"color":"rgba(174,157,181,1)","size":[25.2829997649009],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(174,157,181,1)"}},"hover_info":"text","text":"State: Illinois<br>Cases per 100k: 24159.9<br>Deaths per 100k: 295.8","type":"scatter","name":"Illinois","textfont":{"color":"rgba(174,157,181,1)","size":25.2829997649009},"error_y":{"color":"rgba(174,157,181,1)","width":25.2829997649009},"error_x":{"color":"rgba(174,157,181,1)","width":25.2829997649009},"line":{"color":"rgba(174,157,181,1)","width":25.2829997649009},"xaxis":"x","yaxis":"y","frame":null},{"x":[186.78751987],"y":[25326.9],"mode":"markers","marker":{"color":"rgba(154,159,195,1)","size":[15.1956444429439],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(154,159,195,1)"}},"hover_info":"text","text":"State: Indiana<br>Cases per 100k: 25326.9<br>Deaths per 100k: 349.3","type":"scatter","name":"Indiana","textfont":{"color":"rgba(154,159,195,1)","size":15.1956444429439},"error_y":{"color":"rgba(154,159,195,1)","width":15.1956444429439},"error_x":{"color":"rgba(154,159,195,1)","width":15.1956444429439},"line":{"color":"rgba(154,159,195,1)","width":15.1956444429439},"xaxis":"x","yaxis":"y","frame":null},{"x":[56.507023549],"y":[24049.8],"mode":"markers","marker":{"color":"rgba(147,159,203,1)","size":[9.29962789488208],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(147,159,203,1)"}},"hover_info":"text","text":"State: Iowa<br>Cases per 100k: 24049.8<br>Deaths per 100k: 299.3","type":"scatter","name":"Iowa","textfont":{"color":"rgba(147,159,203,1)","size":9.29962789488208},"error_y":{"color":"rgba(147,159,203,1)","width":9.29962789488208},"error_x":{"color":"rgba(147,159,203,1)","width":9.29962789488208},"line":{"color":"rgba(147,159,203,1)","width":9.29962789488208},"xaxis":"x","yaxis":"y","frame":null},{"x":[35.610732968],"y":[26492.1],"mode":"markers","marker":{"color":"rgba(162,157,201,1)","size":[8.8916781180415],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(162,157,201,1)"}},"hover_info":"text","text":"State: Kansas<br>Cases per 100k: 26492.1<br>Deaths per 100k: 293.4","type":"scatter","name":"Kansas","textfont":{"color":"rgba(162,157,201,1)","size":8.8916781180415},"error_y":{"color":"rgba(162,157,201,1)","width":8.8916781180415},"error_x":{"color":"rgba(162,157,201,1)","width":8.8916781180415},"line":{"color":"rgba(162,157,201,1)","width":8.8916781180415},"xaxis":"x","yaxis":"y","frame":null},{"x":[113.15179107],"y":[29678.6],"mode":"markers","marker":{"color":"rgba(175,154,200,1)","size":[11.4878839049682],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(175,154,200,1)"}},"hover_info":"text","text":"State: Kentucky<br>Cases per 100k: 29678.6<br>Deaths per 100k: 336.6","type":"scatter","name":"Kentucky","textfont":{"color":"rgba(175,154,200,1)","size":11.4878839049682},"error_y":{"color":"rgba(175,154,200,1)","width":11.4878839049682},"error_x":{"color":"rgba(175,154,200,1)","width":11.4878839049682},"line":{"color":"rgba(175,154,200,1)","width":11.4878839049682},"xaxis":"x","yaxis":"y","frame":null},{"x":[107.86011234],"y":[26473.1],"mode":"markers","marker":{"color":"rgba(187,151,199,1)","size":[11.8073467338107],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(187,151,199,1)"}},"hover_info":"text","text":"State: Louisiana<br>Cases per 100k: 26473.1<br>Deaths per 100k: 367.9","type":"scatter","name":"Louisiana","textfont":{"color":"rgba(187,151,199,1)","size":11.8073467338107},"error_y":{"color":"rgba(187,151,199,1)","width":11.8073467338107},"error_x":{"color":"rgba(187,151,199,1)","width":11.8073467338107},"line":{"color":"rgba(187,151,199,1)","width":11.8073467338107},"xaxis":"x","yaxis":"y","frame":null},{"x":[43.391688419],"y":[17652.5],"mode":"markers","marker":{"color":"rgba(199,148,198,1)","size":[6.26845132807386],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(199,148,198,1)"}},"hover_info":"text","text":"State: Maine<br>Cases per 100k: 17652.5<br>Deaths per 100k: 164.8","type":"scatter","name":"Maine","textfont":{"color":"rgba(199,148,198,1)","size":6.26845132807386},"error_y":{"color":"rgba(199,148,198,1)","width":6.26845132807386},"error_x":{"color":"rgba(199,148,198,1)","width":6.26845132807386},"line":{"color":"rgba(199,148,198,1)","width":6.26845132807386},"xaxis":"x","yaxis":"y","frame":null},{"x":[622.26172745],"y":[16774.9],"mode":"markers","marker":{"color":"rgba(211,145,197,1)","size":[14.1131367698985],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(211,145,197,1)"}},"hover_info":"text","text":"State: Maryland<br>Cases per 100k: 16774.9<br>Deaths per 100k: 237.8","type":"scatter","name":"Maryland","textfont":{"color":"rgba(211,145,197,1)","size":14.1131367698985},"error_y":{"color":"rgba(211,145,197,1)","width":14.1131367698985},"error_x":{"color":"rgba(211,145,197,1)","width":14.1131367698985},"line":{"color":"rgba(211,145,197,1)","width":14.1131367698985},"xaxis":"x","yaxis":"y","frame":null},{"x":[884.74992172],"y":[24792.5],"mode":"markers","marker":{"color":"rgba(222,141,196,1)","size":[15.5462821453885],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(222,141,196,1)"}},"hover_info":"text","text":"State: Massachusetts<br>Cases per 100k: 24792.5<br>Deaths per 100k: 346.8","type":"scatter","name":"Massachusetts","textfont":{"color":"rgba(222,141,196,1)","size":15.5462821453885},"error_y":{"color":"rgba(222,141,196,1)","width":15.5462821453885},"error_x":{"color":"rgba(222,141,196,1)","width":15.5462821453885},"line":{"color":"rgba(222,141,196,1)","width":15.5462821453885},"xaxis":"x","yaxis":"y","frame":null},{"x":[176.59707779],"y":[23847.5],"mode":"markers","marker":{"color":"rgba(230,140,193,1)","size":[20.7052959996109],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(230,140,193,1)"}},"hover_info":"text","text":"State: Michigan<br>Cases per 100k: 23847.5<br>Deaths per 100k: 356.9","type":"scatter","name":"Michigan","textfont":{"color":"rgba(230,140,193,1)","size":20.7052959996109},"error_y":{"color":"rgba(230,140,193,1)","width":20.7052959996109},"error_x":{"color":"rgba(230,140,193,1)","width":20.7052959996109},"line":{"color":"rgba(230,140,193,1)","width":20.7052959996109},"xaxis":"x","yaxis":"y","frame":null},{"x":[70.469674696],"y":[25498.8],"mode":"markers","marker":{"color":"rgba(224,152,179,1)","size":[13.3935233021582],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(224,152,179,1)"}},"hover_info":"text","text":"State: Minnesota<br>Cases per 100k: 25498.8<br>Deaths per 100k: 225.4","type":"scatter","name":"Minnesota","textfont":{"color":"rgba(224,152,179,1)","size":13.3935233021582},"error_y":{"color":"rgba(224,152,179,1)","width":13.3935233021582},"error_x":{"color":"rgba(224,152,179,1)","width":13.3935233021582},"line":{"color":"rgba(224,152,179,1)","width":13.3935233021582},"xaxis":"x","yaxis":"y","frame":null},{"x":[63.645625459],"y":[26625],"mode":"markers","marker":{"color":"rgba(217,164,165,1)","size":[9.01678616254552],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(217,164,165,1)"}},"hover_info":"text","text":"State: Mississippi<br>Cases per 100k: 26625<br>Deaths per 100k: 415.3","type":"scatter","name":"Mississippi","textfont":{"color":"rgba(217,164,165,1)","size":9.01678616254552},"error_y":{"color":"rgba(217,164,165,1)","width":9.01678616254552},"error_x":{"color":"rgba(217,164,165,1)","width":9.01678616254552},"line":{"color":"rgba(217,164,165,1)","width":9.01678616254552},"xaxis":"x","yaxis":"y","frame":null},{"x":[89.117470789],"y":[23422.8],"mode":"markers","marker":{"color":"rgba(209,175,151,1)","size":[14.2527675196286],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(209,175,151,1)"}},"hover_info":"text","text":"State: Missouri<br>Cases per 100k: 23422.8<br>Deaths per 100k: 331.1","type":"scatter","name":"Missouri","textfont":{"color":"rgba(209,175,151,1)","size":14.2527675196286},"error_y":{"color":"rgba(209,175,151,1)","width":14.2527675196286},"error_x":{"color":"rgba(209,175,151,1)","width":14.2527675196286},"line":{"color":"rgba(209,175,151,1)","width":14.2527675196286},"xaxis":"x","yaxis":"y","frame":null},{"x":[7.298751095],"y":[25691.5],"mode":"markers","marker":{"color":"rgba(201,186,137,1)","size":[5.80804205143919],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(201,186,137,1)"}},"hover_info":"text","text":"State: Montana<br>Cases per 100k: 25691.5<br>Deaths per 100k: 306","type":"scatter","name":"Montana","textfont":{"color":"rgba(201,186,137,1)","size":5.80804205143919},"error_y":{"color":"rgba(201,186,137,1)","width":5.80804205143919},"error_x":{"color":"rgba(201,186,137,1)","width":5.80804205143919},"line":{"color":"rgba(201,186,137,1)","width":5.80804205143919},"xaxis":"x","yaxis":"y","frame":null},{"x":[25.114922059],"y":[24776.3],"mode":"markers","marker":{"color":"rgba(191,196,121,1)","size":[7.25374742414617],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(191,196,121,1)"}},"hover_info":"text","text":"State: Nebraska<br>Cases per 100k: 24776.3<br>Deaths per 100k: 227.5","type":"scatter","name":"Nebraska","textfont":{"color":"rgba(191,196,121,1)","size":7.25374742414617},"error_y":{"color":"rgba(191,196,121,1)","width":7.25374742414617},"error_x":{"color":"rgba(191,196,121,1)","width":7.25374742414617},"line":{"color":"rgba(191,196,121,1)","width":7.25374742414617},"xaxis":"x","yaxis":"y","frame":null},{"x":[27.6406025],"y":[23513.9],"mode":"markers","marker":{"color":"rgba(180,205,105,1)","size":[9.09659850811102],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(180,205,105,1)"}},"hover_info":"text","text":"State: Nevada<br>Cases per 100k: 23513.9<br>Deaths per 100k: 333.8","type":"scatter","name":"Nevada","textfont":{"color":"rgba(180,205,105,1)","size":9.09659850811102},"error_y":{"color":"rgba(180,205,105,1)","width":9.09659850811102},"error_x":{"color":"rgba(180,205,105,1)","width":9.09659850811102},"line":{"color":"rgba(180,205,105,1)","width":9.09659850811102},"xaxis":"x","yaxis":"y","frame":null},{"x":[151.50059716],"y":[22338.3],"mode":"markers","marker":{"color":"rgba(168,215,87,1)","size":[6.29855730122248],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(168,215,87,1)"}},"hover_info":"text","text":"State: New Hampshire<br>Cases per 100k: 22338.3<br>Deaths per 100k: 180.8","type":"scatter","name":"New Hampshire","textfont":{"color":"rgba(168,215,87,1)","size":6.29855730122248},"error_y":{"color":"rgba(168,215,87,1)","width":6.29855730122248},"error_x":{"color":"rgba(168,215,87,1)","width":6.29855730122248},"line":{"color":"rgba(168,215,87,1)","width":6.29855730122248},"xaxis":"x","yaxis":"y","frame":null},{"x":[1211.3172349],"y":[24849],"mode":"markers","marker":{"color":"rgba(178,216,80,1)","size":[18.8920089345865],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(178,216,80,1)"}},"hover_info":"text","text":"State: New Jersey<br>Cases per 100k: 24849<br>Deaths per 100k: 374.7","type":"scatter","name":"New Jersey","textfont":{"color":"rgba(178,216,80,1)","size":18.8920089345865},"error_y":{"color":"rgba(178,216,80,1)","width":18.8920089345865},"error_x":{"color":"rgba(178,216,80,1)","width":18.8920089345865},"line":{"color":"rgba(178,216,80,1)","width":18.8920089345865},"xaxis":"x","yaxis":"y","frame":null},{"x":[17.273065483],"y":[24742.9],"mode":"markers","marker":{"color":"rgba(191,217,76,1)","size":[7.5308277663626],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(191,217,76,1)"}},"hover_info":"text","text":"State: New Mexico<br>Cases per 100k: 24742.9<br>Deaths per 100k: 348.1","type":"scatter","name":"New Mexico","textfont":{"color":"rgba(191,217,76,1)","size":7.5308277663626},"error_y":{"color":"rgba(191,217,76,1)","width":7.5308277663626},"error_x":{"color":"rgba(191,217,76,1)","width":7.5308277663626},"line":{"color":"rgba(191,217,76,1)","width":7.5308277663626},"xaxis":"x","yaxis":"y","frame":null},{"x":[414.70249405],"y":[25552.6],"mode":"markers","marker":{"color":"rgba(203,217,71,1)","size":[36.624232015612],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(203,217,71,1)"}},"hover_info":"text","text":"State: New York<br>Cases per 100k: 25552.6<br>Deaths per 100k: 345.2","type":"scatter","name":"New York","textfont":{"color":"rgba(203,217,71,1)","size":36.624232015612},"error_y":{"color":"rgba(203,217,71,1)","width":36.624232015612},"error_x":{"color":"rgba(203,217,71,1)","width":36.624232015612},"line":{"color":"rgba(203,217,71,1)","width":36.624232015612},"xaxis":"x","yaxis":"y","frame":null},{"x":[213.56949153],"y":[25371.7],"mode":"markers","marker":{"color":"rgba(215,217,67,1)","size":[21.3518140188635],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(215,217,67,1)"}},"hover_info":"text","text":"State: North Carolina<br>Cases per 100k: 25371.7<br>Deaths per 100k: 223.9","type":"scatter","name":"North Carolina","textfont":{"color":"rgba(215,217,67,1)","size":21.3518140188635},"error_y":{"color":"rgba(215,217,67,1)","width":21.3518140188635},"error_x":{"color":"rgba(215,217,67,1)","width":21.3518140188635},"line":{"color":"rgba(215,217,67,1)","width":21.3518140188635},"xaxis":"x","yaxis":"y","frame":null},{"x":[11.015709613],"y":[31563],"mode":"markers","marker":{"color":"rgba(227,217,62,1)","size":[5.3040613240235],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(227,217,62,1)"}},"hover_info":"text","text":"State: North Dakota<br>Cases per 100k: 31563<br>Deaths per 100k: 300.2","type":"scatter","name":"North Dakota","textfont":{"color":"rgba(227,217,62,1)","size":5.3040613240235},"error_y":{"color":"rgba(227,217,62,1)","width":5.3040613240235},"error_x":{"color":"rgba(227,217,62,1)","width":5.3040613240235},"line":{"color":"rgba(227,217,62,1)","width":5.3040613240235},"xaxis":"x","yaxis":"y","frame":null},{"x":[286.07988455],"y":[22865.1],"mode":"markers","marker":{"color":"rgba(239,217,56,1)","size":[23.529339335629],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(239,217,56,1)"}},"hover_info":"text","text":"State: Ohio<br>Cases per 100k: 22865.1<br>Deaths per 100k: 330.6","type":"scatter","name":"Ohio","textfont":{"color":"rgba(239,217,56,1)","size":23.529339335629},"error_y":{"color":"rgba(239,217,56,1)","width":23.529339335629},"error_x":{"color":"rgba(239,217,56,1)","width":23.529339335629},"line":{"color":"rgba(239,217,56,1)","width":23.529339335629},"xaxis":"x","yaxis":"y","frame":null},{"x":[57.482602245],"y":[26234.3],"mode":"markers","marker":{"color":"rgba(250,217,50,1)","size":[10.6118807958315],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(250,217,50,1)"}},"hover_info":"text","text":"State: Oklahoma<br>Cases per 100k: 26234.3<br>Deaths per 100k: 355.4","type":"scatter","name":"Oklahoma","textfont":{"color":"rgba(250,217,50,1)","size":10.6118807958315},"error_y":{"color":"rgba(250,217,50,1)","width":10.6118807958315},"error_x":{"color":"rgba(250,217,50,1)","width":10.6118807958315},"line":{"color":"rgba(250,217,50,1)","width":10.6118807958315},"xaxis":"x","yaxis":"y","frame":null},{"x":[43.658853835],"y":[16825.8],"mode":"markers","marker":{"color":"rgba(253,215,59,1)","size":[11.0248232215923],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(253,215,59,1)"}},"hover_info":"text","text":"State: Oregon<br>Cases per 100k: 16825.8<br>Deaths per 100k: 172.2","type":"scatter","name":"Oregon","textfont":{"color":"rgba(253,215,59,1)","size":11.0248232215923},"error_y":{"color":"rgba(253,215,59,1)","width":11.0248232215923},"error_x":{"color":"rgba(253,215,59,1)","width":11.0248232215923},"line":{"color":"rgba(253,215,59,1)","width":11.0248232215923},"xaxis":"x","yaxis":"y","frame":null},{"x":[286.23455445],"y":[21769.9],"mode":"markers","marker":{"color":"rgba(250,212,76,1)","size":[25.3930248069052],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(250,212,76,1)"}},"hover_info":"text","text":"State: Pennsylvania<br>Cases per 100k: 21769.9<br>Deaths per 100k: 346.5","type":"scatter","name":"Pennsylvania","textfont":{"color":"rgba(250,212,76,1)","size":25.3930248069052},"error_y":{"color":"rgba(250,212,76,1)","width":25.3930248069052},"error_x":{"color":"rgba(250,212,76,1)","width":25.3930248069052},"line":{"color":"rgba(250,212,76,1)","width":25.3930248069052},"xaxis":"x","yaxis":"y","frame":null},{"x":[1022.6505771],"y":[34253.7],"mode":"markers","marker":{"color":"rgba(244,207,104,1)","size":[5.79972096990537],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(244,207,104,1)"}},"hover_info":"text","text":"State: Rhode Island<br>Cases per 100k: 34253.7<br>Deaths per 100k: 333.2","type":"scatter","name":"Rhode Island","textfont":{"color":"rgba(244,207,104,1)","size":5.79972096990537},"error_y":{"color":"rgba(244,207,104,1)","width":5.79972096990537},"error_x":{"color":"rgba(244,207,104,1)","width":5.79972096990537},"line":{"color":"rgba(244,207,104,1)","width":5.79972096990537},"xaxis":"x","yaxis":"y","frame":null},{"x":[169.11117582],"y":[28876.9],"mode":"markers","marker":{"color":"rgba(240,204,117,1)","size":[12.5146369966342],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(240,204,117,1)"}},"hover_info":"text","text":"State: South Carolina<br>Cases per 100k: 28876.9<br>Deaths per 100k: 346.3","type":"scatter","name":"South Carolina","textfont":{"color":"rgba(240,204,117,1)","size":12.5146369966342},"error_y":{"color":"rgba(240,204,117,1)","width":12.5146369966342},"error_x":{"color":"rgba(240,204,117,1)","width":12.5146369966342},"line":{"color":"rgba(240,204,117,1)","width":12.5146369966342},"xaxis":"x","yaxis":"y","frame":null},{"x":[11.637449389],"y":[26875.9],"mode":"markers","marker":{"color":"rgba(236,201,129,1)","size":[5.50776606911544],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(236,201,129,1)"}},"hover_info":"text","text":"State: South Dakota<br>Cases per 100k: 26875.9<br>Deaths per 100k: 326.9","type":"scatter","name":"South Dakota","textfont":{"color":"rgba(236,201,129,1)","size":5.50776606911544},"error_y":{"color":"rgba(236,201,129,1)","width":5.50776606911544},"error_x":{"color":"rgba(236,201,129,1)","width":5.50776606911544},"line":{"color":"rgba(236,201,129,1)","width":5.50776606911544},"xaxis":"x","yaxis":"y","frame":null},{"x":[164.17412699],"y":[29137],"mode":"markers","marker":{"color":"rgba(232,198,140,1)","size":[15.3259335696775],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(232,198,140,1)"}},"hover_info":"text","text":"State: Tennessee<br>Cases per 100k: 29137<br>Deaths per 100k: 374.7","type":"scatter","name":"Tennessee","textfont":{"color":"rgba(232,198,140,1)","size":15.3259335696775},"error_y":{"color":"rgba(232,198,140,1)","width":15.3259335696775},"error_x":{"color":"rgba(232,198,140,1)","width":15.3259335696775},"line":{"color":"rgba(232,198,140,1)","width":15.3259335696775},"xaxis":"x","yaxis":"y","frame":null},{"x":[109.86046804],"y":[23306.7],"mode":"markers","marker":{"color":"rgba(227,195,149,1)","size":[51.8983959386862],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(227,195,149,1)"}},"hover_info":"text","text":"State: Texas<br>Cases per 100k: 23306.7<br>Deaths per 100k: 305.3","type":"scatter","name":"Texas","textfont":{"color":"rgba(227,195,149,1)","size":51.8983959386862},"error_y":{"color":"rgba(227,195,149,1)","width":51.8983959386862},"error_x":{"color":"rgba(227,195,149,1)","width":51.8983959386862},"line":{"color":"rgba(227,195,149,1)","width":51.8983959386862},"xaxis":"x","yaxis":"y","frame":null},{"x":[38.458214685],"y":[29362.4],"mode":"markers","marker":{"color":"rgba(221,193,154,1)","size":[9.30789894987361],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(221,193,154,1)"}},"hover_info":"text","text":"State: Utah<br>Cases per 100k: 29362.4<br>Deaths per 100k: 149.2","type":"scatter","name":"Utah","textfont":{"color":"rgba(221,193,154,1)","size":9.30789894987361},"error_y":{"color":"rgba(221,193,154,1)","width":9.30789894987361},"error_x":{"color":"rgba(221,193,154,1)","width":9.30789894987361},"line":{"color":"rgba(221,193,154,1)","width":9.30789894987361},"xaxis":"x","yaxis":"y","frame":null},{"x":[67.943995144],"y":[18706.7],"mode":"markers","marker":{"color":"rgba(214,191,158,1)","size":[5.08097963155221],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(214,191,158,1)"}},"hover_info":"text","text":"State: Vermont<br>Cases per 100k: 18706.7<br>Deaths per 100k: 98.8","type":"scatter","name":"Vermont","textfont":{"color":"rgba(214,191,158,1)","size":5.08097963155221},"error_y":{"color":"rgba(214,191,158,1)","width":5.08097963155221},"error_x":{"color":"rgba(214,191,158,1)","width":5.08097963155221},"line":{"color":"rgba(214,191,158,1)","width":5.08097963155221},"xaxis":"x","yaxis":"y","frame":null},{"x":[215.73630393],"y":[19623],"mode":"markers","marker":{"color":"rgba(208,188,162,1)","size":[18.2402714794218],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(208,188,162,1)"}},"hover_info":"text","text":"State: Virginia<br>Cases per 100k: 19623<br>Deaths per 100k: 232.9","type":"scatter","name":"Virginia","textfont":{"color":"rgba(208,188,162,1)","size":18.2402714794218},"error_y":{"color":"rgba(208,188,162,1)","width":18.2402714794218},"error_x":{"color":"rgba(208,188,162,1)","width":18.2402714794218},"line":{"color":"rgba(208,188,162,1)","width":18.2402714794218},"xaxis":"x","yaxis":"y","frame":null},{"x":[113.39722716],"y":[19376],"mode":"markers","marker":{"color":"rgba(201,186,167,1)","size":[16.6025792453781],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(201,186,167,1)"}},"hover_info":"text","text":"State: Washington<br>Cases per 100k: 19376<br>Deaths per 100k: 170.2","type":"scatter","name":"Washington","textfont":{"color":"rgba(201,186,167,1)","size":16.6025792453781},"error_y":{"color":"rgba(201,186,167,1)","width":16.6025792453781},"error_x":{"color":"rgba(201,186,167,1)","width":16.6025792453781},"line":{"color":"rgba(201,186,167,1)","width":16.6025792453781},"xaxis":"x","yaxis":"y","frame":null},{"x":[75.11398785],"y":[27579.3],"mode":"markers","marker":{"color":"rgba(194,184,171,1)","size":[7.04791154835278],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(194,184,171,1)"}},"hover_info":"text","text":"State: West Virginia<br>Cases per 100k: 27579.3<br>Deaths per 100k: 387.6","type":"scatter","name":"West Virginia","textfont":{"color":"rgba(194,184,171,1)","size":7.04791154835278},"error_y":{"color":"rgba(194,184,171,1)","width":7.04791154835278},"error_x":{"color":"rgba(194,184,171,1)","width":7.04791154835278},"line":{"color":"rgba(194,184,171,1)","width":7.04791154835278},"xaxis":"x","yaxis":"y","frame":null},{"x":[107.32815663],"y":[27297.9],"mode":"markers","marker":{"color":"rgba(186,181,175,1)","size":[13.7310173643924],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(186,181,175,1)"}},"hover_info":"text","text":"State: Wisconsin<br>Cases per 100k: 27297.9<br>Deaths per 100k: 246.5","type":"scatter","name":"Wisconsin","textfont":{"color":"rgba(186,181,175,1)","size":13.7310173643924},"error_y":{"color":"rgba(186,181,175,1)","width":13.7310173643924},"error_x":{"color":"rgba(186,181,175,1)","width":13.7310173643924},"line":{"color":"rgba(186,181,175,1)","width":13.7310173643924},"xaxis":"x","yaxis":"y","frame":null},{"x":[5.9506106574],"y":[27032.2],"mode":"markers","marker":{"color":"rgba(179,179,179,1)","size":[5],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(179,179,179,1)"}},"hover_info":"text","text":"State: Wyoming<br>Cases per 100k: 27032.2<br>Deaths per 100k: 310","type":"scatter","name":"Wyoming","textfont":{"color":"rgba(179,179,179,1)","size":5},"error_y":{"color":"rgba(179,179,179,1)","width":5},"error_x":{"color":"rgba(179,179,179,1)","width":5},"line":{"color":"rgba(179,179,179,1)","width":5},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="total-deaths-per-100k-residents" class="section level2">
+<h2>Total Deaths per 100k Residents</h2>
+<div id="htmlwidget-16bddc1092ab9ea8db84" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-16bddc1092ab9ea8db84">{"x":{"visdat":{"25884a1775b9":["function () ","plotlyVisDat"]},"cur_data":"25884a1775b9","attrs":{"25884a1775b9":{"x":{},"y":{},"mode":"markers","marker":{"sizemode":"diameter","opacity":0.5},"hover_info":"text","text":{},"color":{},"size":{},"alpha_stroke":1,"sizes":[5,70],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Population-normalized deaths per 100k","yaxis":{"domain":[0,1],"automargin":true,"title":"Deaths per 100k"},"xaxis":{"domain":[0,1],"automargin":true,"title":"Population Density"},"hovermode":"compare","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[96.50938865],"y":[396.2],"mode":"markers","marker":{"color":"rgba(102,194,165,1)","size":[12.1873700271949],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(102,194,165,1)"}},"hover_info":"text","text":"State: Alabama<br>Cases per 100k: 26512.6<br>Deaths per 100k: 396.2","type":"scatter","name":"Alabama","textfont":{"color":"rgba(102,194,165,1)","size":12.1873700271949},"error_y":{"color":"rgba(102,194,165,1)","width":12.1873700271949},"error_x":{"color":"rgba(102,194,165,1)","width":12.1873700271949},"line":{"color":"rgba(102,194,165,1)","width":12.1873700271949},"xaxis":"x","yaxis":"y","frame":null},{"x":[1.2915230609],"y":[162],"mode":"markers","marker":{"color":"rgba(135,188,156,1)","size":[5.26630962766194],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(135,188,156,1)"}},"hover_info":"text","text":"State: Alaska<br>Cases per 100k: 33378.9<br>Deaths per 100k: 162","type":"scatter","name":"Alaska","textfont":{"color":"rgba(135,188,156,1)","size":5.26630962766194},"error_y":{"color":"rgba(135,188,156,1)","width":5.26630962766194},"error_x":{"color":"rgba(135,188,156,1)","width":5.26630962766194},"line":{"color":"rgba(135,188,156,1)","width":5.26630962766194},"xaxis":"x","yaxis":"y","frame":null},{"x":[63.135855048],"y":[408.9],"mode":"markers","marker":{"color":"rgba(160,182,146,1)","size":[15.9956822476171],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(160,182,146,1)"}},"hover_info":"text","text":"State: Arizona<br>Cases per 100k: 27989.3<br>Deaths per 100k: 408.9","type":"scatter","name":"Arizona","textfont":{"color":"rgba(160,182,146,1)","size":15.9956822476171},"error_y":{"color":"rgba(160,182,146,1)","width":15.9956822476171},"error_x":{"color":"rgba(160,182,146,1)","width":15.9956822476171},"line":{"color":"rgba(160,182,146,1)","width":15.9956822476171},"xaxis":"x","yaxis":"y","frame":null},{"x":[57.919684465],"y":[380.2],"mode":"markers","marker":{"color":"rgba(181,176,137,1)","size":[9.06230197827011],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(181,176,137,1)"}},"hover_info":"text","text":"State: Arkansas<br>Cases per 100k: 27658<br>Deaths per 100k: 380.2","type":"scatter","name":"Arkansas","textfont":{"color":"rgba(181,176,137,1)","size":9.06230197827011},"error_y":{"color":"rgba(181,176,137,1)","width":9.06230197827011},"error_x":{"color":"rgba(181,176,137,1)","width":9.06230197827011},"line":{"color":"rgba(181,176,137,1)","width":9.06230197827011},"xaxis":"x","yaxis":"y","frame":null},{"x":[253.9065023],"y":[227.6],"mode":"markers","marker":{"color":"rgba(200,169,128,1)","size":[70],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(200,169,128,1)"}},"hover_info":"text","text":"State: California<br>Cases per 100k: 23035.5<br>Deaths per 100k: 227.6","type":"scatter","name":"California","textfont":{"color":"rgba(200,169,128,1)","size":70},"error_y":{"color":"rgba(200,169,128,1)","width":70},"error_x":{"color":"rgba(200,169,128,1)","width":70},"line":{"color":"rgba(200,169,128,1)","width":70},"xaxis":"x","yaxis":"y","frame":null},{"x":[54.955977559],"y":[215.6],"mode":"markers","marker":{"color":"rgba(217,161,119,1)","size":[13.5342396278559],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(217,161,119,1)"}},"hover_info":"text","text":"State: Colorado<br>Cases per 100k: 23853.2<br>Deaths per 100k: 215.6","type":"scatter","name":"Colorado","textfont":{"color":"rgba(217,161,119,1)","size":13.5342396278559},"error_y":{"color":"rgba(217,161,119,1)","width":13.5342396278559},"error_x":{"color":"rgba(217,161,119,1)","width":13.5342396278559},"line":{"color":"rgba(217,161,119,1)","width":13.5342396278559},"xaxis":"x","yaxis":"y","frame":null},{"x":[737.74459965],"y":[302.5],"mode":"markers","marker":{"color":"rgba(233,153,110,1)","size":[9.99419640800191],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(233,153,110,1)"}},"hover_info":"text","text":"State: Connecticut<br>Cases per 100k: 20672.8<br>Deaths per 100k: 302.5","type":"scatter","name":"Connecticut","textfont":{"color":"rgba(233,153,110,1)","size":9.99419640800191},"error_y":{"color":"rgba(233,153,110,1)","width":9.99419640800191},"error_x":{"color":"rgba(233,153,110,1)","width":9.99419640800191},"line":{"color":"rgba(233,153,110,1)","width":9.99419640800191},"xaxis":"x","yaxis":"y","frame":null},{"x":[496.4324605],"y":[296.8],"mode":"markers","marker":{"color":"rgba(248,144,101,1)","size":[5.64940121563985],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(248,144,101,1)"}},"hover_info":"text","text":"State: Delaware<br>Cases per 100k: 26884.9<br>Deaths per 100k: 296.8","type":"scatter","name":"Delaware","textfont":{"color":"rgba(248,144,101,1)","size":5.64940121563985},"error_y":{"color":"rgba(248,144,101,1)","width":5.64940121563985},"error_x":{"color":"rgba(248,144,101,1)","width":5.64940121563985},"line":{"color":"rgba(248,144,101,1)","width":5.64940121563985},"xaxis":"x","yaxis":"y","frame":null},{"x":[397.01575445],"y":[344.7],"mode":"markers","marker":{"color":"rgba(232,146,123,1)","size":[39.5543132782142],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(232,146,123,1)"}},"hover_info":"text","text":"State: Florida<br>Cases per 100k: 27681<br>Deaths per 100k: 344.7","type":"scatter","name":"Florida","textfont":{"color":"rgba(232,146,123,1)","size":39.5543132782142},"error_y":{"color":"rgba(232,146,123,1)","width":39.5543132782142},"error_x":{"color":"rgba(232,146,123,1)","width":39.5543132782142},"line":{"color":"rgba(232,146,123,1)","width":39.5543132782142},"xaxis":"x","yaxis":"y","frame":null},{"x":[182.26478911],"y":[339.4],"mode":"markers","marker":{"color":"rgba(220,149,138,1)","size":[21.5783592156126],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(220,149,138,1)"}},"hover_info":"text","text":"State: Georgia<br>Cases per 100k: 23114.1<br>Deaths per 100k: 339.4","type":"scatter","name":"Georgia","textfont":{"color":"rgba(220,149,138,1)","size":21.5783592156126},"error_y":{"color":"rgba(220,149,138,1)","width":21.5783592156126},"error_x":{"color":"rgba(220,149,138,1)","width":21.5783592156126},"line":{"color":"rgba(220,149,138,1)","width":21.5783592156126},"xaxis":"x","yaxis":"y","frame":null},{"x":[221.17691552],"y":[97],"mode":"markers","marker":{"color":"rgba(206,152,152,1)","size":[6.40533562063236],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(206,152,152,1)"}},"hover_info":"text","text":"State: Hawaii<br>Cases per 100k: 16519.9<br>Deaths per 100k: 97","type":"scatter","name":"Hawaii","textfont":{"color":"rgba(206,152,152,1)","size":6.40533562063236},"error_y":{"color":"rgba(206,152,152,1)","width":6.40533562063236},"error_x":{"color":"rgba(206,152,152,1)","width":6.40533562063236},"line":{"color":"rgba(206,152,152,1)","width":6.40533562063236},"xaxis":"x","yaxis":"y","frame":null},{"x":[21.225798536],"y":[279.3],"mode":"markers","marker":{"color":"rgba(191,154,166,1)","size":[6.96182587438443],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(191,154,166,1)"}},"hover_info":"text","text":"State: Idaho<br>Cases per 100k: 25339.8<br>Deaths per 100k: 279.3","type":"scatter","name":"Idaho","textfont":{"color":"rgba(191,154,166,1)","size":6.96182587438443},"error_y":{"color":"rgba(191,154,166,1)","width":6.96182587438443},"error_x":{"color":"rgba(191,154,166,1)","width":6.96182587438443},"line":{"color":"rgba(191,154,166,1)","width":6.96182587438443},"xaxis":"x","yaxis":"y","frame":null},{"x":[229.51115613],"y":[295.8],"mode":"markers","marker":{"color":"rgba(174,157,181,1)","size":[25.2829997649009],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(174,157,181,1)"}},"hover_info":"text","text":"State: Illinois<br>Cases per 100k: 24159.9<br>Deaths per 100k: 295.8","type":"scatter","name":"Illinois","textfont":{"color":"rgba(174,157,181,1)","size":25.2829997649009},"error_y":{"color":"rgba(174,157,181,1)","width":25.2829997649009},"error_x":{"color":"rgba(174,157,181,1)","width":25.2829997649009},"line":{"color":"rgba(174,157,181,1)","width":25.2829997649009},"xaxis":"x","yaxis":"y","frame":null},{"x":[186.78751987],"y":[349.3],"mode":"markers","marker":{"color":"rgba(154,159,195,1)","size":[15.1956444429439],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(154,159,195,1)"}},"hover_info":"text","text":"State: Indiana<br>Cases per 100k: 25326.9<br>Deaths per 100k: 349.3","type":"scatter","name":"Indiana","textfont":{"color":"rgba(154,159,195,1)","size":15.1956444429439},"error_y":{"color":"rgba(154,159,195,1)","width":15.1956444429439},"error_x":{"color":"rgba(154,159,195,1)","width":15.1956444429439},"line":{"color":"rgba(154,159,195,1)","width":15.1956444429439},"xaxis":"x","yaxis":"y","frame":null},{"x":[56.507023549],"y":[299.3],"mode":"markers","marker":{"color":"rgba(147,159,203,1)","size":[9.29962789488208],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(147,159,203,1)"}},"hover_info":"text","text":"State: Iowa<br>Cases per 100k: 24049.8<br>Deaths per 100k: 299.3","type":"scatter","name":"Iowa","textfont":{"color":"rgba(147,159,203,1)","size":9.29962789488208},"error_y":{"color":"rgba(147,159,203,1)","width":9.29962789488208},"error_x":{"color":"rgba(147,159,203,1)","width":9.29962789488208},"line":{"color":"rgba(147,159,203,1)","width":9.29962789488208},"xaxis":"x","yaxis":"y","frame":null},{"x":[35.610732968],"y":[293.4],"mode":"markers","marker":{"color":"rgba(162,157,201,1)","size":[8.8916781180415],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(162,157,201,1)"}},"hover_info":"text","text":"State: Kansas<br>Cases per 100k: 26492.1<br>Deaths per 100k: 293.4","type":"scatter","name":"Kansas","textfont":{"color":"rgba(162,157,201,1)","size":8.8916781180415},"error_y":{"color":"rgba(162,157,201,1)","width":8.8916781180415},"error_x":{"color":"rgba(162,157,201,1)","width":8.8916781180415},"line":{"color":"rgba(162,157,201,1)","width":8.8916781180415},"xaxis":"x","yaxis":"y","frame":null},{"x":[113.15179107],"y":[336.6],"mode":"markers","marker":{"color":"rgba(175,154,200,1)","size":[11.4878839049682],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(175,154,200,1)"}},"hover_info":"text","text":"State: Kentucky<br>Cases per 100k: 29678.6<br>Deaths per 100k: 336.6","type":"scatter","name":"Kentucky","textfont":{"color":"rgba(175,154,200,1)","size":11.4878839049682},"error_y":{"color":"rgba(175,154,200,1)","width":11.4878839049682},"error_x":{"color":"rgba(175,154,200,1)","width":11.4878839049682},"line":{"color":"rgba(175,154,200,1)","width":11.4878839049682},"xaxis":"x","yaxis":"y","frame":null},{"x":[107.86011234],"y":[367.9],"mode":"markers","marker":{"color":"rgba(187,151,199,1)","size":[11.8073467338107],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(187,151,199,1)"}},"hover_info":"text","text":"State: Louisiana<br>Cases per 100k: 26473.1<br>Deaths per 100k: 367.9","type":"scatter","name":"Louisiana","textfont":{"color":"rgba(187,151,199,1)","size":11.8073467338107},"error_y":{"color":"rgba(187,151,199,1)","width":11.8073467338107},"error_x":{"color":"rgba(187,151,199,1)","width":11.8073467338107},"line":{"color":"rgba(187,151,199,1)","width":11.8073467338107},"xaxis":"x","yaxis":"y","frame":null},{"x":[43.391688419],"y":[164.8],"mode":"markers","marker":{"color":"rgba(199,148,198,1)","size":[6.26845132807386],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(199,148,198,1)"}},"hover_info":"text","text":"State: Maine<br>Cases per 100k: 17652.5<br>Deaths per 100k: 164.8","type":"scatter","name":"Maine","textfont":{"color":"rgba(199,148,198,1)","size":6.26845132807386},"error_y":{"color":"rgba(199,148,198,1)","width":6.26845132807386},"error_x":{"color":"rgba(199,148,198,1)","width":6.26845132807386},"line":{"color":"rgba(199,148,198,1)","width":6.26845132807386},"xaxis":"x","yaxis":"y","frame":null},{"x":[622.26172745],"y":[237.8],"mode":"markers","marker":{"color":"rgba(211,145,197,1)","size":[14.1131367698985],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(211,145,197,1)"}},"hover_info":"text","text":"State: Maryland<br>Cases per 100k: 16774.9<br>Deaths per 100k: 237.8","type":"scatter","name":"Maryland","textfont":{"color":"rgba(211,145,197,1)","size":14.1131367698985},"error_y":{"color":"rgba(211,145,197,1)","width":14.1131367698985},"error_x":{"color":"rgba(211,145,197,1)","width":14.1131367698985},"line":{"color":"rgba(211,145,197,1)","width":14.1131367698985},"xaxis":"x","yaxis":"y","frame":null},{"x":[884.74992172],"y":[346.8],"mode":"markers","marker":{"color":"rgba(222,141,196,1)","size":[15.5462821453885],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(222,141,196,1)"}},"hover_info":"text","text":"State: Massachusetts<br>Cases per 100k: 24792.5<br>Deaths per 100k: 346.8","type":"scatter","name":"Massachusetts","textfont":{"color":"rgba(222,141,196,1)","size":15.5462821453885},"error_y":{"color":"rgba(222,141,196,1)","width":15.5462821453885},"error_x":{"color":"rgba(222,141,196,1)","width":15.5462821453885},"line":{"color":"rgba(222,141,196,1)","width":15.5462821453885},"xaxis":"x","yaxis":"y","frame":null},{"x":[176.59707779],"y":[356.9],"mode":"markers","marker":{"color":"rgba(230,140,193,1)","size":[20.7052959996109],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(230,140,193,1)"}},"hover_info":"text","text":"State: Michigan<br>Cases per 100k: 23847.5<br>Deaths per 100k: 356.9","type":"scatter","name":"Michigan","textfont":{"color":"rgba(230,140,193,1)","size":20.7052959996109},"error_y":{"color":"rgba(230,140,193,1)","width":20.7052959996109},"error_x":{"color":"rgba(230,140,193,1)","width":20.7052959996109},"line":{"color":"rgba(230,140,193,1)","width":20.7052959996109},"xaxis":"x","yaxis":"y","frame":null},{"x":[70.469674696],"y":[225.4],"mode":"markers","marker":{"color":"rgba(224,152,179,1)","size":[13.3935233021582],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(224,152,179,1)"}},"hover_info":"text","text":"State: Minnesota<br>Cases per 100k: 25498.8<br>Deaths per 100k: 225.4","type":"scatter","name":"Minnesota","textfont":{"color":"rgba(224,152,179,1)","size":13.3935233021582},"error_y":{"color":"rgba(224,152,179,1)","width":13.3935233021582},"error_x":{"color":"rgba(224,152,179,1)","width":13.3935233021582},"line":{"color":"rgba(224,152,179,1)","width":13.3935233021582},"xaxis":"x","yaxis":"y","frame":null},{"x":[63.645625459],"y":[415.3],"mode":"markers","marker":{"color":"rgba(217,164,165,1)","size":[9.01678616254552],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(217,164,165,1)"}},"hover_info":"text","text":"State: Mississippi<br>Cases per 100k: 26625<br>Deaths per 100k: 415.3","type":"scatter","name":"Mississippi","textfont":{"color":"rgba(217,164,165,1)","size":9.01678616254552},"error_y":{"color":"rgba(217,164,165,1)","width":9.01678616254552},"error_x":{"color":"rgba(217,164,165,1)","width":9.01678616254552},"line":{"color":"rgba(217,164,165,1)","width":9.01678616254552},"xaxis":"x","yaxis":"y","frame":null},{"x":[89.117470789],"y":[331.1],"mode":"markers","marker":{"color":"rgba(209,175,151,1)","size":[14.2527675196286],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(209,175,151,1)"}},"hover_info":"text","text":"State: Missouri<br>Cases per 100k: 23422.8<br>Deaths per 100k: 331.1","type":"scatter","name":"Missouri","textfont":{"color":"rgba(209,175,151,1)","size":14.2527675196286},"error_y":{"color":"rgba(209,175,151,1)","width":14.2527675196286},"error_x":{"color":"rgba(209,175,151,1)","width":14.2527675196286},"line":{"color":"rgba(209,175,151,1)","width":14.2527675196286},"xaxis":"x","yaxis":"y","frame":null},{"x":[7.298751095],"y":[306],"mode":"markers","marker":{"color":"rgba(201,186,137,1)","size":[5.80804205143919],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(201,186,137,1)"}},"hover_info":"text","text":"State: Montana<br>Cases per 100k: 25691.5<br>Deaths per 100k: 306","type":"scatter","name":"Montana","textfont":{"color":"rgba(201,186,137,1)","size":5.80804205143919},"error_y":{"color":"rgba(201,186,137,1)","width":5.80804205143919},"error_x":{"color":"rgba(201,186,137,1)","width":5.80804205143919},"line":{"color":"rgba(201,186,137,1)","width":5.80804205143919},"xaxis":"x","yaxis":"y","frame":null},{"x":[25.114922059],"y":[227.5],"mode":"markers","marker":{"color":"rgba(191,196,121,1)","size":[7.25374742414617],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(191,196,121,1)"}},"hover_info":"text","text":"State: Nebraska<br>Cases per 100k: 24776.3<br>Deaths per 100k: 227.5","type":"scatter","name":"Nebraska","textfont":{"color":"rgba(191,196,121,1)","size":7.25374742414617},"error_y":{"color":"rgba(191,196,121,1)","width":7.25374742414617},"error_x":{"color":"rgba(191,196,121,1)","width":7.25374742414617},"line":{"color":"rgba(191,196,121,1)","width":7.25374742414617},"xaxis":"x","yaxis":"y","frame":null},{"x":[27.6406025],"y":[333.8],"mode":"markers","marker":{"color":"rgba(180,205,105,1)","size":[9.09659850811102],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(180,205,105,1)"}},"hover_info":"text","text":"State: Nevada<br>Cases per 100k: 23513.9<br>Deaths per 100k: 333.8","type":"scatter","name":"Nevada","textfont":{"color":"rgba(180,205,105,1)","size":9.09659850811102},"error_y":{"color":"rgba(180,205,105,1)","width":9.09659850811102},"error_x":{"color":"rgba(180,205,105,1)","width":9.09659850811102},"line":{"color":"rgba(180,205,105,1)","width":9.09659850811102},"xaxis":"x","yaxis":"y","frame":null},{"x":[151.50059716],"y":[180.8],"mode":"markers","marker":{"color":"rgba(168,215,87,1)","size":[6.29855730122248],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(168,215,87,1)"}},"hover_info":"text","text":"State: New Hampshire<br>Cases per 100k: 22338.3<br>Deaths per 100k: 180.8","type":"scatter","name":"New Hampshire","textfont":{"color":"rgba(168,215,87,1)","size":6.29855730122248},"error_y":{"color":"rgba(168,215,87,1)","width":6.29855730122248},"error_x":{"color":"rgba(168,215,87,1)","width":6.29855730122248},"line":{"color":"rgba(168,215,87,1)","width":6.29855730122248},"xaxis":"x","yaxis":"y","frame":null},{"x":[1211.3172349],"y":[374.7],"mode":"markers","marker":{"color":"rgba(178,216,80,1)","size":[18.8920089345865],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(178,216,80,1)"}},"hover_info":"text","text":"State: New Jersey<br>Cases per 100k: 24849<br>Deaths per 100k: 374.7","type":"scatter","name":"New Jersey","textfont":{"color":"rgba(178,216,80,1)","size":18.8920089345865},"error_y":{"color":"rgba(178,216,80,1)","width":18.8920089345865},"error_x":{"color":"rgba(178,216,80,1)","width":18.8920089345865},"line":{"color":"rgba(178,216,80,1)","width":18.8920089345865},"xaxis":"x","yaxis":"y","frame":null},{"x":[17.273065483],"y":[348.1],"mode":"markers","marker":{"color":"rgba(191,217,76,1)","size":[7.5308277663626],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(191,217,76,1)"}},"hover_info":"text","text":"State: New Mexico<br>Cases per 100k: 24742.9<br>Deaths per 100k: 348.1","type":"scatter","name":"New Mexico","textfont":{"color":"rgba(191,217,76,1)","size":7.5308277663626},"error_y":{"color":"rgba(191,217,76,1)","width":7.5308277663626},"error_x":{"color":"rgba(191,217,76,1)","width":7.5308277663626},"line":{"color":"rgba(191,217,76,1)","width":7.5308277663626},"xaxis":"x","yaxis":"y","frame":null},{"x":[414.70249405],"y":[345.2],"mode":"markers","marker":{"color":"rgba(203,217,71,1)","size":[36.624232015612],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(203,217,71,1)"}},"hover_info":"text","text":"State: New York<br>Cases per 100k: 25552.6<br>Deaths per 100k: 345.2","type":"scatter","name":"New York","textfont":{"color":"rgba(203,217,71,1)","size":36.624232015612},"error_y":{"color":"rgba(203,217,71,1)","width":36.624232015612},"error_x":{"color":"rgba(203,217,71,1)","width":36.624232015612},"line":{"color":"rgba(203,217,71,1)","width":36.624232015612},"xaxis":"x","yaxis":"y","frame":null},{"x":[213.56949153],"y":[223.9],"mode":"markers","marker":{"color":"rgba(215,217,67,1)","size":[21.3518140188635],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(215,217,67,1)"}},"hover_info":"text","text":"State: North Carolina<br>Cases per 100k: 25371.7<br>Deaths per 100k: 223.9","type":"scatter","name":"North Carolina","textfont":{"color":"rgba(215,217,67,1)","size":21.3518140188635},"error_y":{"color":"rgba(215,217,67,1)","width":21.3518140188635},"error_x":{"color":"rgba(215,217,67,1)","width":21.3518140188635},"line":{"color":"rgba(215,217,67,1)","width":21.3518140188635},"xaxis":"x","yaxis":"y","frame":null},{"x":[11.015709613],"y":[300.2],"mode":"markers","marker":{"color":"rgba(227,217,62,1)","size":[5.3040613240235],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(227,217,62,1)"}},"hover_info":"text","text":"State: North Dakota<br>Cases per 100k: 31563<br>Deaths per 100k: 300.2","type":"scatter","name":"North Dakota","textfont":{"color":"rgba(227,217,62,1)","size":5.3040613240235},"error_y":{"color":"rgba(227,217,62,1)","width":5.3040613240235},"error_x":{"color":"rgba(227,217,62,1)","width":5.3040613240235},"line":{"color":"rgba(227,217,62,1)","width":5.3040613240235},"xaxis":"x","yaxis":"y","frame":null},{"x":[286.07988455],"y":[330.6],"mode":"markers","marker":{"color":"rgba(239,217,56,1)","size":[23.529339335629],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(239,217,56,1)"}},"hover_info":"text","text":"State: Ohio<br>Cases per 100k: 22865.1<br>Deaths per 100k: 330.6","type":"scatter","name":"Ohio","textfont":{"color":"rgba(239,217,56,1)","size":23.529339335629},"error_y":{"color":"rgba(239,217,56,1)","width":23.529339335629},"error_x":{"color":"rgba(239,217,56,1)","width":23.529339335629},"line":{"color":"rgba(239,217,56,1)","width":23.529339335629},"xaxis":"x","yaxis":"y","frame":null},{"x":[57.482602245],"y":[355.4],"mode":"markers","marker":{"color":"rgba(250,217,50,1)","size":[10.6118807958315],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(250,217,50,1)"}},"hover_info":"text","text":"State: Oklahoma<br>Cases per 100k: 26234.3<br>Deaths per 100k: 355.4","type":"scatter","name":"Oklahoma","textfont":{"color":"rgba(250,217,50,1)","size":10.6118807958315},"error_y":{"color":"rgba(250,217,50,1)","width":10.6118807958315},"error_x":{"color":"rgba(250,217,50,1)","width":10.6118807958315},"line":{"color":"rgba(250,217,50,1)","width":10.6118807958315},"xaxis":"x","yaxis":"y","frame":null},{"x":[43.658853835],"y":[172.2],"mode":"markers","marker":{"color":"rgba(253,215,59,1)","size":[11.0248232215923],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(253,215,59,1)"}},"hover_info":"text","text":"State: Oregon<br>Cases per 100k: 16825.8<br>Deaths per 100k: 172.2","type":"scatter","name":"Oregon","textfont":{"color":"rgba(253,215,59,1)","size":11.0248232215923},"error_y":{"color":"rgba(253,215,59,1)","width":11.0248232215923},"error_x":{"color":"rgba(253,215,59,1)","width":11.0248232215923},"line":{"color":"rgba(253,215,59,1)","width":11.0248232215923},"xaxis":"x","yaxis":"y","frame":null},{"x":[286.23455445],"y":[346.5],"mode":"markers","marker":{"color":"rgba(250,212,76,1)","size":[25.3930248069052],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(250,212,76,1)"}},"hover_info":"text","text":"State: Pennsylvania<br>Cases per 100k: 21769.9<br>Deaths per 100k: 346.5","type":"scatter","name":"Pennsylvania","textfont":{"color":"rgba(250,212,76,1)","size":25.3930248069052},"error_y":{"color":"rgba(250,212,76,1)","width":25.3930248069052},"error_x":{"color":"rgba(250,212,76,1)","width":25.3930248069052},"line":{"color":"rgba(250,212,76,1)","width":25.3930248069052},"xaxis":"x","yaxis":"y","frame":null},{"x":[1022.6505771],"y":[333.2],"mode":"markers","marker":{"color":"rgba(244,207,104,1)","size":[5.79972096990537],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(244,207,104,1)"}},"hover_info":"text","text":"State: Rhode Island<br>Cases per 100k: 34253.7<br>Deaths per 100k: 333.2","type":"scatter","name":"Rhode Island","textfont":{"color":"rgba(244,207,104,1)","size":5.79972096990537},"error_y":{"color":"rgba(244,207,104,1)","width":5.79972096990537},"error_x":{"color":"rgba(244,207,104,1)","width":5.79972096990537},"line":{"color":"rgba(244,207,104,1)","width":5.79972096990537},"xaxis":"x","yaxis":"y","frame":null},{"x":[169.11117582],"y":[346.3],"mode":"markers","marker":{"color":"rgba(240,204,117,1)","size":[12.5146369966342],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(240,204,117,1)"}},"hover_info":"text","text":"State: South Carolina<br>Cases per 100k: 28876.9<br>Deaths per 100k: 346.3","type":"scatter","name":"South Carolina","textfont":{"color":"rgba(240,204,117,1)","size":12.5146369966342},"error_y":{"color":"rgba(240,204,117,1)","width":12.5146369966342},"error_x":{"color":"rgba(240,204,117,1)","width":12.5146369966342},"line":{"color":"rgba(240,204,117,1)","width":12.5146369966342},"xaxis":"x","yaxis":"y","frame":null},{"x":[11.637449389],"y":[326.9],"mode":"markers","marker":{"color":"rgba(236,201,129,1)","size":[5.50776606911544],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(236,201,129,1)"}},"hover_info":"text","text":"State: South Dakota<br>Cases per 100k: 26875.9<br>Deaths per 100k: 326.9","type":"scatter","name":"South Dakota","textfont":{"color":"rgba(236,201,129,1)","size":5.50776606911544},"error_y":{"color":"rgba(236,201,129,1)","width":5.50776606911544},"error_x":{"color":"rgba(236,201,129,1)","width":5.50776606911544},"line":{"color":"rgba(236,201,129,1)","width":5.50776606911544},"xaxis":"x","yaxis":"y","frame":null},{"x":[164.17412699],"y":[374.7],"mode":"markers","marker":{"color":"rgba(232,198,140,1)","size":[15.3259335696775],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(232,198,140,1)"}},"hover_info":"text","text":"State: Tennessee<br>Cases per 100k: 29137<br>Deaths per 100k: 374.7","type":"scatter","name":"Tennessee","textfont":{"color":"rgba(232,198,140,1)","size":15.3259335696775},"error_y":{"color":"rgba(232,198,140,1)","width":15.3259335696775},"error_x":{"color":"rgba(232,198,140,1)","width":15.3259335696775},"line":{"color":"rgba(232,198,140,1)","width":15.3259335696775},"xaxis":"x","yaxis":"y","frame":null},{"x":[109.86046804],"y":[305.3],"mode":"markers","marker":{"color":"rgba(227,195,149,1)","size":[51.8983959386862],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(227,195,149,1)"}},"hover_info":"text","text":"State: Texas<br>Cases per 100k: 23306.7<br>Deaths per 100k: 305.3","type":"scatter","name":"Texas","textfont":{"color":"rgba(227,195,149,1)","size":51.8983959386862},"error_y":{"color":"rgba(227,195,149,1)","width":51.8983959386862},"error_x":{"color":"rgba(227,195,149,1)","width":51.8983959386862},"line":{"color":"rgba(227,195,149,1)","width":51.8983959386862},"xaxis":"x","yaxis":"y","frame":null},{"x":[38.458214685],"y":[149.2],"mode":"markers","marker":{"color":"rgba(221,193,154,1)","size":[9.30789894987361],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(221,193,154,1)"}},"hover_info":"text","text":"State: Utah<br>Cases per 100k: 29362.4<br>Deaths per 100k: 149.2","type":"scatter","name":"Utah","textfont":{"color":"rgba(221,193,154,1)","size":9.30789894987361},"error_y":{"color":"rgba(221,193,154,1)","width":9.30789894987361},"error_x":{"color":"rgba(221,193,154,1)","width":9.30789894987361},"line":{"color":"rgba(221,193,154,1)","width":9.30789894987361},"xaxis":"x","yaxis":"y","frame":null},{"x":[67.943995144],"y":[98.8],"mode":"markers","marker":{"color":"rgba(214,191,158,1)","size":[5.08097963155221],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(214,191,158,1)"}},"hover_info":"text","text":"State: Vermont<br>Cases per 100k: 18706.7<br>Deaths per 100k: 98.8","type":"scatter","name":"Vermont","textfont":{"color":"rgba(214,191,158,1)","size":5.08097963155221},"error_y":{"color":"rgba(214,191,158,1)","width":5.08097963155221},"error_x":{"color":"rgba(214,191,158,1)","width":5.08097963155221},"line":{"color":"rgba(214,191,158,1)","width":5.08097963155221},"xaxis":"x","yaxis":"y","frame":null},{"x":[215.73630393],"y":[232.9],"mode":"markers","marker":{"color":"rgba(208,188,162,1)","size":[18.2402714794218],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(208,188,162,1)"}},"hover_info":"text","text":"State: Virginia<br>Cases per 100k: 19623<br>Deaths per 100k: 232.9","type":"scatter","name":"Virginia","textfont":{"color":"rgba(208,188,162,1)","size":18.2402714794218},"error_y":{"color":"rgba(208,188,162,1)","width":18.2402714794218},"error_x":{"color":"rgba(208,188,162,1)","width":18.2402714794218},"line":{"color":"rgba(208,188,162,1)","width":18.2402714794218},"xaxis":"x","yaxis":"y","frame":null},{"x":[113.39722716],"y":[170.2],"mode":"markers","marker":{"color":"rgba(201,186,167,1)","size":[16.6025792453781],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(201,186,167,1)"}},"hover_info":"text","text":"State: Washington<br>Cases per 100k: 19376<br>Deaths per 100k: 170.2","type":"scatter","name":"Washington","textfont":{"color":"rgba(201,186,167,1)","size":16.6025792453781},"error_y":{"color":"rgba(201,186,167,1)","width":16.6025792453781},"error_x":{"color":"rgba(201,186,167,1)","width":16.6025792453781},"line":{"color":"rgba(201,186,167,1)","width":16.6025792453781},"xaxis":"x","yaxis":"y","frame":null},{"x":[75.11398785],"y":[387.6],"mode":"markers","marker":{"color":"rgba(194,184,171,1)","size":[7.04791154835278],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(194,184,171,1)"}},"hover_info":"text","text":"State: West Virginia<br>Cases per 100k: 27579.3<br>Deaths per 100k: 387.6","type":"scatter","name":"West Virginia","textfont":{"color":"rgba(194,184,171,1)","size":7.04791154835278},"error_y":{"color":"rgba(194,184,171,1)","width":7.04791154835278},"error_x":{"color":"rgba(194,184,171,1)","width":7.04791154835278},"line":{"color":"rgba(194,184,171,1)","width":7.04791154835278},"xaxis":"x","yaxis":"y","frame":null},{"x":[107.32815663],"y":[246.5],"mode":"markers","marker":{"color":"rgba(186,181,175,1)","size":[13.7310173643924],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(186,181,175,1)"}},"hover_info":"text","text":"State: Wisconsin<br>Cases per 100k: 27297.9<br>Deaths per 100k: 246.5","type":"scatter","name":"Wisconsin","textfont":{"color":"rgba(186,181,175,1)","size":13.7310173643924},"error_y":{"color":"rgba(186,181,175,1)","width":13.7310173643924},"error_x":{"color":"rgba(186,181,175,1)","width":13.7310173643924},"line":{"color":"rgba(186,181,175,1)","width":13.7310173643924},"xaxis":"x","yaxis":"y","frame":null},{"x":[5.9506106574],"y":[310],"mode":"markers","marker":{"color":"rgba(179,179,179,1)","size":[5],"sizemode":"diameter","opacity":0.5,"line":{"color":"rgba(179,179,179,1)"}},"hover_info":"text","text":"State: Wyoming<br>Cases per 100k: 27032.2<br>Deaths per 100k: 310","type":"scatter","name":"Wyoming","textfont":{"color":"rgba(179,179,179,1)","size":5},"error_y":{"color":"rgba(179,179,179,1)","width":5},"error_x":{"color":"rgba(179,179,179,1)","width":5},"line":{"color":"rgba(179,179,179,1)","width":5},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+<p>Copyright &copy; 2022, Joey Hotz.</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
