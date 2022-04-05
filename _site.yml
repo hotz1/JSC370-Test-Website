@@ -1,0 +1,19 @@
+name: "Joey's Website (very cool)"
+navbar:
+  title: "The Website"
+  left:
+    - text: "Home Page"
+      href: index.html
+    - text: "The Second Page"
+      href: untitled_unmastered.html
+  right:
+    - icon: fa-github fa-lg
+      href: https://github.com/JSC370/jsc370-2022/
+    - text: "JSC370 Home"
+      href: https://jsc370.github.io/jsc370-2022/
+output:
+  html_document:
+    theme: cosmo
+    include:
+      after_body: footer.html
+    css: styles.css
